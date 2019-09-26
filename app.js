@@ -16,6 +16,10 @@ app.use(express.urlencoded({extended: false}))
 app.use('/wiki', wikiRouter);
 app.use('/users', userRouter);
 
+app.get('/', (req, res, next) => {
+  res.redirect('./wiki')
+})
+
 
 
 const init = async () => {

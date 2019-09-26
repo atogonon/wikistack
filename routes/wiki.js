@@ -16,7 +16,17 @@ router.get('/', (req, res) =>{
     res.send(layout(''))
 })
 
+router.get('/', (req, res, next) => {
+    res.send(wikipage(''))
+})
 
+router.post('/', (req, res, next) => {
+    res.send('got to post /wiki/')
+})
+
+router.get('/add', (req, res, next) => {
+    res.send(addPage())
+})
 
 
 

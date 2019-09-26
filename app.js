@@ -2,7 +2,9 @@ const morgan = require('morgan')
 const express = require('express')
 const app = express()
 const { db } = require('./models')
-const routes = require('./routes/wiki');
+const wikiRouter = require('./routes/wiki');
+const userRouter = require('./routes/user');
+
 const models = require('./models')
 const PORT = 1337;
 
@@ -11,7 +13,8 @@ const PORT = 1337;
 app.use(morgan('dev'))
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: false}))
-app.use(routes)
+app.use('/wiki', wikiRouter);
+app.use('/users', userRouter);
 
 
 

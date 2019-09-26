@@ -5,7 +5,7 @@ const db = new Sequelize('postgres://localhost:5432/wikistacks', {
 const Page = db.define('page', {
     title: {
       type: Sequelize.STRING,
-      allowNull: false     
+      allowNull: false
     },
     slug: {
       type: Sequelize.STRING,
@@ -19,7 +19,7 @@ const Page = db.define('page', {
       type: Sequelize.ENUM('open', 'closed')
     }
   });
-  
+
   const User = db.define('user', {
     name: {
       type: Sequelize.STRING,
@@ -30,11 +30,11 @@ const Page = db.define('page', {
       allowNull: false,
       validate: {
           isEmail: true
-      }  
+      }
     }
   });
-  
-  
+
+
 
 module.exports = {
   db, Page, User

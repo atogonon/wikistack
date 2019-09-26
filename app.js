@@ -25,7 +25,7 @@ app.get('/', (req, res, next) => {
 const init = async () => {
     await models.User.sync()
     await models.Page.sync()
-    models.db.sync({force: true})
+    //models.db.sync({force: true})
 
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
